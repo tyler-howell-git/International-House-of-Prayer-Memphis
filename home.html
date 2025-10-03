@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prayer Times & Booking</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #1a1a1a; color: #fff; line-height: 1.6; }
+
+    header { background: #b03a2e; color: #fff; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+
+    main { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+
+    h2 { margin: 20px 0 10px; color: #e67e22; }
+
+    section { margin-bottom: 40px; }
+
+    .calendar { width: 100%; height: 500px; border: none; margin-bottom: 40px; }
+
+    form { background: #2c2c2c; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, select, textarea, button {
+      width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #555; background: #1a1a1a; color: #fff;
+    }
+    input::placeholder { color: #ccc; }
+    button {
+      background: #e74c3c; color: #fff; border: none; cursor: pointer; margin-top: 15px;
+    }
+    button:hover { background: #c0392b; }
+
+    footer { text-align: center; padding: 20px; font-size: 0.9em; color: #ccc; }
+
+    .donate { display: inline-block; padding: 10px 20px; background: #ff5722; color: #fff; border-radius: 5px; text-decoration: none; margin-top: 10px; }
+    .donate:hover { background: #e64a19; }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Prayer Times & Booking</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#booking">Book a Time</a>
+      <a href="#donate">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>Welcome to our IHOP Memphis. Here you can view upcoming prayer times, book your slot, and support our mission.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a local community organization dedicated to providing prayer times, spiritual guidance, and events for all members. Our goal is to make it easy for everyone to participate and connect.</p>
+    </section>
+
+    <section id="calendar">
+      <h2>Upcoming Prayer Times</h2>
+      <iframe class="calendar" 
+        src="https://calendar.google.com/calendar/embed?src=your_calendar_id%40group.calendar.google.com&ctz=America/New_York" 
+        frameborder="0" scrolling="no"></iframe>
+    </section>
+
+    <section id="booking">
+      <h2>Book Your Prayer Slot</h2>
+      <form id="bookingForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="event">Prayer Time / Location</label>
+        <input type="text" id="event" name="event" placeholder="Enter the prayer slot or location" required>
+
+        <button type="submit">Submit Booking</button>
+      </form>
+    </section>
+
+    <section id="donate">
+      <h2>Support Us</h2>
+      <p>If you would like to help our community efforts, you can make a donation here:</p>
+      <a href="https://www.paypal.com/donate?hosted_button_id=YOURBUTTONID" target="_blank" class="donate">Donate Now</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 IHOP Memphis. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const event = form.event.value.trim();
+
+      if(name && email && event) {
+        alert(`Thanks ${name}! Your booking request for "${event}" has been received.`);
+        form.reset();
+      } else {
+        alert('Please fill out all fields.');
+      }
+    });
+  </script>
+
+</body>
+</html>
