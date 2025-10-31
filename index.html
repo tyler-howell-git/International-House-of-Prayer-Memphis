@@ -8,6 +8,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: Arial, sans-serif; background: #1a1a1a; color: #fff; line-height: 1.6; }
 
+    html { scroll-behavior: smooth; }
+
     header { background: #b03a2e; color: #fff; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
     nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
@@ -27,13 +29,13 @@
     }
     input::placeholder { color: #ccc; }
     button {
-      background: #e74c3c; color: #fff; border: none; cursor: pointer; margin-top: 15px;
+      background: #c0392b; color: #f1f1f1; border: none; cursor: pointer; margin-top: 15px;
     }
     button:hover { background: #c0392b; }
 
     footer { text-align: center; padding: 20px; font-size: 0.9em; color: #ccc; }
 
-    .donate { display: inline-block; padding: 10px 20px; background: #ff5722; color: #fff; border-radius: 5px; text-decoration: none; margin-top: 10px; }
+    .donate { display: inline-block; padding: 10px 20px; background: #d84315; color: #fff; border-radius: 5px; text-decoration: none; margin-top: 10px; }
     .donate:hover { background: #e64a19; }
 
   </style>
@@ -65,13 +67,13 @@
     <section id="calendar">
       <h2>Upcoming Prayer Times</h2>
       <iframe class="calendar" 
-        src="https://calendar.google.com/calendar/embed?src=your_calendar_id%40group.calendar.google.com&ctz=America/New_York" 
+        src="https://calendar.google.com/calendar/embed?src=19a614ba99b482b43cde701b48c90cc9a0d3692fe8f92fb94728670fbe30868d%40group.calendar.google.com&ctz=America%2FChicago" 
         frameborder="0" scrolling="no"></iframe>
     </section>
 
     <section id="booking">
       <h2>Book Your Prayer Slot</h2>
-      <form id="bookingForm">
+      <form id="bookingForm" action="https://formspree.io/f/xblpzeae" method="POST">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
