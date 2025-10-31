@@ -97,23 +97,5 @@
   <footer>
     &copy; 2025 IHOP Memphis. All rights reserved.
   </footer>
-
-  <script>
-    const form = document.getElementById('bookingForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const event = form.event.value.trim();
-
-      if(name && email && event) {
-        alert(`Thanks ${name}! Your booking request for "${event}" has been received.`);
-        form.reset();
-      } else {
-        alert('Please fill out all fields.');
-      }
-    });
-  </script>
-
 </body>
 </html>
